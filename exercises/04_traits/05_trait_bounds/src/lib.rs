@@ -7,6 +7,7 @@
 
 /// Return the minimum of two values.
 pub fn min<T: Ord>(left: T, right: T) -> T {
+    // Ord gurantees that the values can be compared.
     if left <= right {
         left
     } else {

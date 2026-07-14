@@ -56,6 +56,10 @@ impl TicketStore {
     pub fn get(&self, id: TicketId) -> Option<&Ticket> {
         self.tickets.iter().find(|&t| t.id == id)
     }
+
+    pub fn Index(&self, id: TicketId) -> Option<&Ticket> {
+        self.get(id)
+    }
 }
 
 #[cfg(test)]

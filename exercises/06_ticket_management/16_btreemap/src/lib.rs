@@ -13,7 +13,7 @@ pub struct TicketStore {
     counter: u64,
 }
 
-#[derive(Clone, Copy, Debug, PartialEq, Ord, PartialOrdEq, Eq)]
+#[derive(Clone, Copy, Debug, PartialEq, Ord, Eq, PartialOrd)]
 pub struct TicketId(u64);
 
 #[derive(Clone, Debug, PartialEq)]
@@ -54,7 +54,7 @@ impl TicketStore {
             description: ticket.description,
             status: Status::ToDo,
         };
-        self.tickets.insert(id, ticket),
+        self.tickets.insert(id, ticket);
         id
     }
 
